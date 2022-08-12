@@ -3,8 +3,7 @@ package main
 import rl "vendor:raylib"
 import "core:fmt"
 
-vector2 :: [2]f32
-vector2f32 :: [2]f32
+vec2 :: rl.Vector2
 
 main :: proc() {
 	pair := vector2{1, 3}
@@ -29,7 +28,7 @@ basic_window :: proc() {
 input_mouse :: proc() {
 	rl.InitWindow(800, 450, "raylib [core] example - mouse input")
 
-	ball_position := vector2f32{-100, -100}
+	ball_position := vec2{-100, -100}
 	ball_color :: rl.DARKBLUE
 
 	for !rl.WindowShouldClose() {
