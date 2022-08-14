@@ -51,3 +51,30 @@ input_mouse :: proc() {
 	}
 	rl.CloseWindow()
 }
+
+
+input_mouse_wheel :: proc() {
+
+	screen_width := i32(800)
+	screen_height := i32(450)
+	rl.InitWindow(screen_width, screen_height, "raylib [core] example - mouse input")
+
+	box_position_y := screen_width/2 - 40
+	scroll_speed := 4.0
+
+	for !rl.WindowShouldClose() {
+		box_position_y -= rl.GetMouseWheelMove() * scroll_speed
+
+		rl.BeginDrawing()
+
+			rl.ClearBackground(rl.RAYWHITE)
+
+			rl.DrawRectangle(screen_width/2 - 40, box_position_y, 80, 80, rl.MAROON)
+
+			rl.DrawText("Use mouse wheel to move the cube up and down!", 10, 10, 20, rl.GRAY)
+			rl.DrawText(rl.TextFormat("Box position Y: %03i", box_position_y), 10, 40, 20, rl.LIGHTGRAY);
+
+		rl.EndDrawing()
+	}
+	rl.CloseWindow()
+}
