@@ -15,7 +15,13 @@ main :: proc() {
 
 	// fmt.println(bion_day)
 	// fmt.println(normal_day)
+
+	// ui()
 }
+
+// ui
+// raylib input text
+
 
 two :: proc() -> int {
 	return 2
