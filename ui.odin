@@ -131,8 +131,8 @@ input_text :: proc() {
 				if (letter_count < 0) {
 					letter_count = 0
 				}
-				name[letter_count] = 0
 				// delete letter at letter_count pos
+				name[letter_count] = 0
 			}
 		} else {
 			rl.SetMouseCursor(rl.MouseCursor.DEFAULT)
@@ -196,3 +196,7 @@ runes_to_cstring :: proc(runes: []rune) -> cstring {
         res := strings.to_string(builder)
         return cstring(raw_data(res))
     }
+
+
+// raygui binding for input text
+// using raylib to avoid rl.      (raylib procs = PamelCase(), odin procs = snake_case())
